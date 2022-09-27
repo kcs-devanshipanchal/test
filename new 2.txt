@@ -1,0 +1,104 @@
+REDUX TOOLKIT NOTES:
+
+-CONFIGURE STORE:
+helps us to configure redux store with less code and less effort
+createStore()- helps to create store
+createAction()-
+
+
+credentials:
+Id- testuser1@test.com
+
+Pass- testuser1
+
+
+
+
+
+New notes:
+index.tsx
+-import react from react: to convert jsx into js
+-react dom for dom manipulations
+-apollo provider: Provider , ApolloProvider wraps your React app and places Apollo Client on the context, enabling you to access it from anywhere in your component tree.
+-apollo client:Apollo Client is a comprehensive state management library for JavaScript that enables you to manage both local and remote data with GraphQL. Use it to fetch, cache, and modify application data, all while automatically updating your UI.
+-provider:The <Provider> component makes the Redux store available to any nested components that need to access the Redux store.
+-persist gate from redux-persist:PersistGate delays the rendering of your app's UI until your persisted state has been retrieved and saved to redux
+-index.css : styling 
+-bootstrap import
+-app import
+-reportwebvitals:for measuring the performance
+-persistor , store from "./redux/store": GO TO STORE.ts
+-ApolloClientConfig: GO TO config -> appoloClientConfig (changes)
+-Global helper: GO TO helper -> GlobalHelper.ts (changes)
+-line:14 client varibale ma ApolloClient function invoke kariyo 
+-line: 15 DOUBT
+
+-21: provider na props ma store from store.ts pass kariyu
+-22: persist gate na props ma persistor pass kariyo
+-23: ApolloProvider na client ma upar define karelo client obj pass kariyo
+-24: App is wrapped between provoder -> persist gate -> apollo provider
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+App.tsx
+1: BrowserRouter, Route, Routes for routing
+3: BaseLayout: GO TO Modules-> shared -> Layout -> BaseLayout
+5: Toast Container for toast msgs
+6: toast msg ni css 
+7: Assests -> app.scss ma css aakha app ni
+8:Login: Go to modules/shared/login/Login
+9:checkLoginstatus, checkLogoutStatus go to CONTEXT -> AUTH 
+
+Return:
+-toast container
+-BrowserRouter routes route
+-line 25 doubt Go To Check Login status
+-26: will route to login page
+-28: go to check logout status
+-29: re direct to base layout when incorrect path is added
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Login.tsx(shared->login->login
+-useEffect:What does useEffect do? By using this Hook, you tell React that your component needs to do something after render. React will remember the function you passed (we’ll refer to it as our “effect”), and call it later after performing the DOM updates.
+We import the useState Hook from React. It lets us keep local state in a function component.
+-The useNavigate hook returns a function that lets you navigate programmatically, for example after a form is submitted.
+-Imperative programming – focuses on how to execute, defines control flow as statements that change a program state.
+Declarative programming – focuses on what to execute, defines program logic, but not detailed control flow.
+-useLazyQuery:it does not immediately execute its associated query. Instead, it returns a query function in its result tuple that you call whenever you're ready to execute the query.
+-useform:custom hook for managing forms with ease. It takes one object as optional argument. The following example demonstrates all of its properties along with their default values.
+-loader : loading thing
+-Authentiction service is imported from graphql folder
+-( GetRefreshTokenResult, LoginResult ) from interfaces authentication auth interface
+-useAppDispatch redux->hooks
+-changeAllPermissionList, changeUserAccessToken, changeUserDetail, changeUserLoggedIn -> redux -> userslice ma thi ave che
+-11 emailPatternValidation, userLoggedInSuccess, ValidationMessage -> constants -> common ema regex pattens lakhi che
+-12 SetLocalStorage helper->LocalStorage file ma function che je local storage ma wastuo store kare che
+-13 RoleRequestHeaders, UserRequestHeaders helper file ma functions che koi DOUBT
+-14 roleService graphql->RoleService
+-15 GetAllPermissionResult interfaces -> authentication ma che kaik
+-17 Login react arrow functional component
+-19 ek dispatch naam no variable lidho ne ema useAppDispatch() invoke kariyu
+-20 navigate naam na variable ma useNavigate invoke kariyu from react router dom
+-21 showLoader naam no state banayo ne eni default value false api eno function setShowLoader()
+-23 useLazyQuery no syntax che jema apollo error use kari che type eno LoginResult che ....authenticationService- graphQl authenticationService che, UserRequestHeaders() su kare e DOUBT but it is passsed as a paramter
+-24
+
+
+---------------------------------------------------------------------------------------
+store.ts
+1-Redux Toolkit is a set of tools that helps simplify Redux development. It includes utilities for creating and managing Redux stores, as well as for writing Redux actions and reducers.
+-useSelector hook is used to access the value from the global state
+
+
+
+query is something you just query for once, you can consider it as an equivalent of GET.
+
+watchQuery is something you constantly keep a watch on query, whenever that query will be refetched or the data related to that query is changed from anywhere else, this method will keep on emitting the updated data.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ChangeLog
+useLazyQuery:seLazyQuery, it does not immediately execute its associated query. 
+Instead, it returns a query function in its result tuple that you call whenever you're ready to execute the query.
+
+Link: Link to let the user change the URL
+
+useSelector: to access the value from the global state
+
